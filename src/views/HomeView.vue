@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div class="container">
+          <h1>MANAGE USERS</h1>
+    <div id="ucard">
+      <my-card v-for="(users,ind) in $store.state.users" :userDetail="users" :index="ind"/>
+      </div>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import MyCard from '../components/MyCard'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    MyCard
   }
 }
+
 </script>
+<style>
+
+.container{
+    margin: 50px auto;
+    text-align: center;
+}
+</style>
